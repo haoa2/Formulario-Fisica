@@ -2,7 +2,7 @@
     $id_categoria = (int)$_GET['idc'];
     $id_formula = (int)$_GET['idf'];
 
-    $mysqli = new mysqli("localhost","root","Eddymascota22\"","fisica2");
+    $mysqli = new mysqli("localhost","formulario","formpass","fisica2");
 
     $resultado = $mysqli->query("SELECT id_cat, nom_cat, desc_cat FROM categorias;");
 ?>
@@ -166,7 +166,9 @@
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                       <h3 id="windowLabel">El resultado es:</h3>
-                      <h2 id="modalResultadoNum"></h2>
+                    </div>
+                    <div class="modal-body">
+                        <h2 id="modalResultadoNum"></h2>
                     </div>
                     <div class="modal-footer">
                         <button class="btn" data-dismiss="modal" aria-hidden="true" onClick="okCalculo ();">Cerrar</button>

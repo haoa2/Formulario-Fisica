@@ -1,5 +1,5 @@
 <?php
-    $mysqli = new mysqli("localhost","root","Eddymascota22\"","fisica2");
+    $mysqli = new mysqli("localhost","formulario","formpass","fisica2");
 
     $resultado = $mysqli->query("SELECT id_cat, nom_cat, desc_cat FROM categorias;");
 ?>
