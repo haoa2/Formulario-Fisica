@@ -1,11 +1,14 @@
 <?php
-    $mysqli = new mysqli("localhost","formulario","formpass","fisica2");
+    require 'db_connection.php';
 
     $resultado = $mysqli->query("SELECT id_cat, nom_cat, desc_cat FROM categorias;");
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,6 +29,30 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+        <script type="text/javascript">
+            function cerrarLogin(){
+                $("#modalLogin").modal ('hide');
+            };
+    
+            function abrirLogin() {
+                $("#modalLogin").modal ("show");
+            }
+
+            function cerrarRegistro(){
+                $("#modalRegistro").modal ('hide');
+            };
+    
+            function abrirRegistro() {
+                $("#modalRegistro").modal ("show");
+            }
+
+            function alerta(titulo,mensaje) {
+                document.getElementById('tituloAlerta').innerHTML = titulo;
+                document.getElementById('mensajeAlerta').innerHTML = mensaje;
+                $("#modalAlertas").modal ('show');
+            }
+        </script>
     </head>
     <body role="document">
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -41,7 +68,6 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.php">Inicio</a></li>
                         <li><a href="equipo.php">Acerca de Nosotros</a></li>
                         <li><a href="convertidor.php">Conversión de Unidades</a></li>
                         <li class="dropdown">
@@ -56,6 +82,10 @@
                             </ul>
                         </li>
                     </ul>
+                    <form class="navbar-form navbar-right" role="form">
+                      <a href="#modalLogin" type="submit" class="btn btn-info" data-toggle="modal" >Iniciar Sesión</a>
+                      <a href="#modalRegistro" type="submit" class="btn btn-info" data-toggle="modal" >Registrarse</a>
+                    </form>
                 </div>
             </div>
         </div>
@@ -122,6 +152,141 @@
 
         <hr class="featurette-divider">
 
+        <div id="modalAlertas" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="windowLabel" aria-hidden="true">
+            <div class="container">
+                <br>
+                <br>
+                <br>
+                <div class="well">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h4 id="tituloAlerta">:OO</h4>  
+                    </div>
+                    <div class="modal-body">
+                        <p id="mensajeAlerta"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">¡Entendido!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalLogin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="windowLabel" aria-hidden="true">
+            <div class="container">
+                <br>
+                <br>
+                <br>
+                <div class="well">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h3>Iniciar Sesión</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formLogin" method="post" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Correo Electrónico</label>
+                                <div class="col-sm-5">
+                                    <input type="email" class="form-control" name="email" placeholder="Tu e-mail..." required/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Contraseña</label>
+                                <div class="col-sm-5">
+                                    <input type="password" class="form-control" name="passLogin" placeholder="Tu contraseña..." required/>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <div class="col-sm-8 text-center">
+                                    <button type="submit" name="iniciarsesion" class="btn btn-success">Iniciar Sesión</button>
+                                    <small>ó si no tiene Cuenta, debe </small>
+                                    <a href="#modalRegistro" class="btn btn-info" data-toggle="modal" onClick="cerrarLogin();">Registrarse</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true" onClick="cerrarLogin();">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalRegistro" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="windowLabel" aria-hidden="true">
+            <div class="container">
+                <br>
+                <br>
+                <br>
+                <div class="well">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h3>Registro</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formRegistro" method="post" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Nombre(s)</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" required/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Apellido(s)</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" name="apellidos" placeholder="Tus Apellidos" required/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Correo Electrónico</label>
+                                <div class="col-sm-5">
+                                    <input type="email" class="form-control" name="email" placeholder="Tu e-mail" required/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Contraseña</label>
+                                <div class="col-sm-5">
+                                    <input type="password" class="form-control" name="pass1" placeholder="Contraseña..." required/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Repite la Contraseña</label>
+                                <div class="col-sm-5">
+                                    <input type="password" class="form-control" name="pass2" placeholder="Repite la Contraseña..." required/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-8 text-center">
+                                    <small>
+                                        Al hacer click en Registrarse, está aceptando los Términos y Condiciones de nuestro
+                                        servicio, así como nuestra política de uso de datos y de manipulación de información.
+                                    </small>
+                                    <br>
+                                    <br>
+                                    <button type="submit" name="registrarse" class="btn btn-success">¡Registrarse Ahora!</button>
+                                    ó
+                                    <input type="reset" class="btn btn-danger" value="Limpiar Formulario">
+                                    <br>
+                                    <br>
+                                    <small>
+                                        Si ya tiene cuenta talvez deba
+                                    </small>
+                                    <a href="#modalLogin" type="submit" class="btn btn-info" data-toggle="modal" onClick="cerrarRegistro();">Iniciar Sesión</a>
+                                </div>
+                                <!--div class="col-sm-5 text-center">
+                                    <button type="submit" name="registrarse" class="btn btn-success" data-dismiss="modal" aria-hiden="true">¡Registrarse Ahora!</button>
+                                </div-->
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true" onClick="cerrarRegistro();">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <footer>
             <div class="container">
             <div class="well">
@@ -142,3 +307,21 @@
         <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
+<?php
+    function mostrarAlerta($titulo, $mensaje)
+    {
+        echo "<script type=\"text/javascript\">";
+        echo "alerta('$titulo','$mensaje');";
+        echo "</script>";
+    }
+
+    if (isset($_POST['registrarse'])) {
+        echo "<script>cerrarRegistro();</script>";
+        mostrarAlerta("Registro de Usuario","¡Se ha registrado Exitosamente!");
+    }
+
+    if (isset($_POST['iniciarsesion'])) {
+        echo "<script>cerrarLogin();</script>";
+        mostrarAlerta("Inicio de Sesión","Ha inciado sesión correctamente.");
+    }
+?>

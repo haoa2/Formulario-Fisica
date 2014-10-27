@@ -1,5 +1,5 @@
 <?php
-    $mysqli = new mysqli("localhost","formulario","formpass","fisica2");
+    require 'db_connection.php';
 
     $resultado = $mysqli->query("SELECT id_cat, nom_cat, desc_cat FROM categorias;");
 ?>
@@ -46,7 +46,6 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.php">Inicio</a></li>
                         <li class="active"><a href="equipo.php">Acerca de Nosotros</a></li>
                         <li><a href="convertidor.php">Conversión de Unidades</a></li>
                         <li class="dropdown">
