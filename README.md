@@ -1,10 +1,10 @@
-Formulario-Fisica
+Formulario-Online
 =================
 
-Proyecto de un Formulario de Física On-Line.
+Proyecto de un Formulario  On-Line.
 
 
-La idea es tener un formulario de Física que permita acceder a cada fórmula con
+La idea es tener un formulario que permita acceder a cada fórmula con
 cada despeje posible para así ser calculada en tiempo real por el usuario. 
 
 El proyecto usa Twitter Bootsrap, PHP, Javascript, JQuery y una base de datos
