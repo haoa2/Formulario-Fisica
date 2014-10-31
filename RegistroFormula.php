@@ -1,7 +1,5 @@
 <?php
 	$mysqli = new mysqli("localhost","root","Eddymascota22\"","fisica2");
-
-
 ?>
 <html>
 	<head>
@@ -36,6 +34,12 @@
 		$descripcion = $_POST['desc'];
 		$despejes = (int)$_POST['numDesp'];
 
-		$query 
+		$query = "SELECT COUNT(*) FROM formula WHERE id_cat=$cat";
+
+		$result = $mysqli->query($query);
+
+		$fila = $result->fetch_array(MYSQLI_NUM);
+
+		$id_form = (int)$fila[0];
 	}
 ?>

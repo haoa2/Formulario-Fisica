@@ -85,7 +85,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <!-- <div class="container">
             <div class="row">
                     <div class="col-lg-12">
                         <form name="datosUnidades" id="formConversiones" method="post">
@@ -122,52 +122,60 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <!--div class="container">
+        <div class="container">
             <form method="POST" name="datosUnidades" id="formConversiones" role="form">            
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="well">
-                            <h4>Seleccione la Unidad Origen:</h4>
-                            <br>
-                            <div class="input-group form-group">
-                                    <input type="radio" name="origen" id="origen" value="f">Farenheit<br>
-                                    <input type="radio" name="origen" id="origen" value="c">Celsius<br>
-                                    <input type="radio" name="origen" id="origen" value="r">Ranking<br>
-                                    <input type="radio" name="origen" id="origen" value="k">Kelvin<br>
+                    <div class="form-group">
+                        <div class="col-lg-6">
+                            <div class="well">
+                                <h4>Seleccione la Unidad Origen:</h4>
+                                <br>
+                                <div class="input-group form-group">
+                                        <input type="radio" name="origen" id="origen" value="f">Farenheit<br>
+                                        <input type="radio" name="origen" id="origen" value="c">Celsius<br>
+                                        <input type="radio" name="origen" id="origen" value="r">Ranking<br>
+                                        <input type="radio" name="origen" id="origen" value="k">Kelvin<br>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="well">
-                            <h4>Seleccione la Unidad de Destino:</h4>
-                            <br>
-                            <div class="input-group form-group">
-                                <input type="radio" name="dest" id="dest" value="f">Farenheit<br>
-                                <input type="radio" name="dest" id="dest" value="c">Celsius<br>
-                                <input type="radio" name="dest" id="dest" value="r">Ranking<br>
-                                <input type="radio" name="dest" id="dest" value="k">Kelvin<br>
+                    <div class="form-group">
+                        <div class="col-lg-6">
+                            <div class="well">
+                                <h4>Seleccione la Unidad de Destino:</h4>
+                                <br>
+                                <div class="input-group form-group">
+                                    <input type="radio" name="dest" id="dest" value="f">Farenheit<br>
+                                    <input type="radio" name="dest" id="dest" value="c">Celsius<br>
+                                    <input type="radio" name="dest" id="dest" value="r">Ranking<br>
+                                    <input type="radio" name="dest" id="dest" value="k">Kelvin<br>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="well">
-                            <div class="input-group input-group-lg">
-                                <input type="number" class="form-control" placeholder="Valor a Convertir" name"u1">
+                    <div class="form-group">
+                        <div class="col-lg-6">
+                            <div class="well">
+                                <div class="input-group input-group-lg">
+                                    <input type="number" class="form-control" placeholder="Valor a Convertir" name"u1">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="well">
-                            <button type="submit" name="subir" class="btn btn-primary btn-lg btn-block">Convertir</button>
+                    <div class="from-group">
+                        <div class="col-lg-6">
+                            <div class="well">
+                                <button type="submit" name="subir" class="btn btn-primary btn-lg btn-block">Convertir</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </form>
-        </div-->
+        </div>
 
 
         <!-- Footer -->
@@ -217,6 +225,7 @@
 </html>
 <?php
     if (isset($_POST['u1']) && isset($_POST['origen']) && isset($_POST['dest'])) {
+        echo "<h1>PENDEJO";
         $origen = $_POST['origen'];
         $destino = $_POST['dest'];
         $valor = (int)$_POST['u1'];

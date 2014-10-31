@@ -1,13 +1,12 @@
 <?php
     require 'db_connection.php';
+    require 'php/sesiones.php';
 
     $resultado = $mysqli->query("SELECT id_cat, nom_cat, desc_cat FROM categorias;");
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
         
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,6 +51,15 @@
                 document.getElementById('mensajeAlerta').innerHTML = mensaje;
                 $("#modalAlertas").modal ('show');
             }
+
+            function sleep(milliseconds) {
+              var start = new Date().getTime();
+              for (var i = 0; i < 1e7; i++) {
+                if ((new Date().getTime() - start) > milliseconds){
+                  break;
+                }
+              }
+            }
         </script>
     </head>
     <body role="document">
@@ -82,10 +90,19 @@
                             </ul>
                         </li>
                     </ul>
+                    <?php if(!isLoggedIn()){ ?>
                     <form class="navbar-form navbar-right" role="form">
-                      <a href="#modalLogin" type="submit" class="btn btn-info" data-toggle="modal" >Iniciar Sesión</a>
-                      <a href="#modalRegistro" type="submit" class="btn btn-info" data-toggle="modal" >Registrarse</a>
+                      <a href="#modalLogin" type="submit" class="btn btn-info navbar-btn" data-toggle="modal" >Iniciar Sesión</a>
+                      <a href="#modalRegistro" type="submit" class="btn btn-info navnar-btn" data-toggle="modal" >Registrarse</a>
                     </form>
+                    <?php }else{ ?>
+                    <form class="navbar-form navbar-right" role="form" method="post">
+                        <button onClick="sleep(1000); location.reload();" type="submit" name="logout" class="btn btn-warning navbar-btn">Cerrar Sesión</button>
+                    </form>
+                    <p class="navbar-text navbar-right">
+                    <?php echo "Tu mamá éstá iniciando sesión"; ?>
+                    </p>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -199,9 +216,9 @@
                             <br>
                             <div class="form-group">
                                 <div class="col-sm-8 text-center">
-                                    <button type="submit" name="iniciarsesion" class="btn btn-success">Iniciar Sesión</button>
+                                    <button type="submit" name="iniciarsesion" class="btn btn-success" onClick="sleep(1000); location.reload();">Iniciar Sesión</button>
                                     <small>ó si no tiene Cuenta, debe </small>
-                                    <a href="#modalRegistro" class="btn btn-info" data-toggle="modal" onClick="cerrarLogin();">Registrarse</a>
+                                    <a href="#modalRegistro" class="btn btn-info" data-toggle="modal" onClick="cerrarLogin()">Registrarse</a>
                                 </div>
                             </div>
                         </form>
@@ -308,6 +325,11 @@
     </body>
 </html>
 <?php
+    
+    if (isset($_POST['logout'])) {
+        logout();
+    }
+
     function mostrarAlerta($titulo, $mensaje)
     {
         echo "<script type=\"text/javascript\">";
@@ -321,7 +343,8 @@
     }
 
     if (isset($_POST['iniciarsesion'])) {
-        echo "<script>cerrarLogin();</script>";
+        echo "<script> cerrarLogin();</script>";
         mostrarAlerta("Inicio de Sesión","Ha inciado sesión correctamente.");
+        validarUsuario(12);
     }
 ?>
