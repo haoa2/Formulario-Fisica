@@ -13,7 +13,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Página Web con la presentación del Proyecto.">
         <meta name="author" content="Humberto Alejandro Ortega Alcocer <humbertowoody@gmail.com>">
-
+        <meta rel="icon" type="image/png" href="img/icon.png">
+        <link rel="shortcut icon" href="img/icon.png">
+        
         <title>Formulario de Física</title>
 
         <!-- Bootstrap Core CSS -->

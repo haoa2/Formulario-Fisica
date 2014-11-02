@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Página acerca del Equipo que creó el Sitio WEB">
     <meta name="author" content="Humberto Alejandro Ortega Alcocer">
+    <link rel="shortcut icon" href="img/icon.png">
 
     <title>Categoría Física</title>
 

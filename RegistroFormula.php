@@ -5,6 +5,7 @@
 	<head>
 		<title>Agregar Fórmula</title>
 		<meta charset="utf-8"/>
+		<link rel="shortcut icon" href="img/icon.png">
 	</head>
 	<body role="document">
 		<h1>Agregar Fórmula</h1>
