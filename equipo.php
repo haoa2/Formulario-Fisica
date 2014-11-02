@@ -85,40 +85,41 @@
 
         <!-- Team Members Row -->
         <div class="well">
-        <div class="row">
-            
-            <div class="col-lg-12">
-                <h2 class="page-header">Nuestro Equipo</h2>
+            <div class="row">  
+                <div class="col-lg-12">
+                    <h2 class="page-header">Nuestro Equipo</h2>
+                </div>
+                <div class="col-lg-6 col-sm-6 text-center">
+                    <img class="img-circle img-responsive img-center" src="img/david.jpg" alt="">
+                    <h3>David Aldair Molina Mendoza
+                        <small>Diseño y Front-end</small>
+                    </h3>
+                    <p>Diseño de los Templates para las Fórmulas. ¡Encuéntrame en <a href="https://www.facebook.com/David3Molina">Facebook</a>!</p>
+                </div>
+                <div class="col-lg-6 col-sm-6 text-center">
+                    <img class="img-circle img-responsive img-center" src="img/zarza.jpg" alt="">
+                    <h3>Victor Manuel Zarza Hernández
+                        <small>Front-end y Testing</small>
+                    </h3>
+                    <p>Diseño de los templates de presentación y pruebas en diferentes dispositivos. ¡Encuéntrame en <a href="https://www.facebook.com/victormanuel.zarzahernandez">Facebook</a>!</p>
+                </div>
             </div>
-            <div class="col-lg-6 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="img/david.jpg" alt="">
-                <h3>David Aldair Molina Mendoza
-                    <small>Diseño y Front-end</small>
-                </h3>
-                <p>Diseño de los Templates para las Fórmulas. ¡Encuéntrame en <a href="https://www.facebook.com/David3Molina">Facebook</a>!</p>
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 text-center">
+                    <img class="img-circle img-responsive img-center" src="img/yo.png" alt="">
+                    <h3>Humberto Alejandro Ortega Alcocer
+                        <small>Programación, Desarrollo y Debugging</small>
+                    </h3>
+                    <p>Programación general del Sitio Web. ¡Encuéntrame en <a href="https://twitter.com/HumbertoWoody">Twitter</a>!</p>
+                </div>
+                <div class="col-lg-6 col-sm-6 text-center">
+                    <img class="img-circle img-responsive img-center" src="img/arturo.jpg" alt="">
+                    <h3>Arturo Munguía Guadarrama
+                        <small>Recavación de Información.</small>
+                    </h3>
+                    <p>Fórmulas y Despejes.  ¡Encuéntrame en <a href="https://www.facebook.com/arturo.munguia.393?fref=ts">Facebook</a>!</p>
+                </div>
             </div>
-            <div class="col-lg-6 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="img/zarza.jpg" alt="">
-                <h3>Victor Manuel Zarza Hernández
-                    <small>Front-end y Testing</small>
-                </h3>
-                <p>Diseño de los templates de presentación y pruebas en diferentes dispositivos. ¡Encuéntrame en <a href="https://www.facebook.com/victormanuel.zarzahernandez">Facebook</a>!</p>
-            </div>
-            <div class="col-lg-6 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="img/yo.png" alt="">
-                <h3>Humberto Alejandro Ortega Alcocer
-                    <small>Programación, Desarrollo y Debugging</small>
-                </h3>
-                <p>Programación general del Sitio Web. ¡Encuéntrame en <a href="https://twitter.com/HumbertoWoody">Twitter</a>!</p>
-            </div>
-            <div class="col-lg-6 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="img/arturo.jpg" alt="">
-                <h3>Arturo Munguía Guadarrama
-                    <small>Recavación de Información.</small>
-                </h3>
-                <p>Fórmulas y Despejes.  ¡Encuéntrame en <a href="https://www.facebook.com/arturo.munguia.393?fref=ts">Facebook</a>!</p>
-            </div>
-        </div>
         </div>
 
         <hr>
