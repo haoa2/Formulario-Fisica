@@ -19,3 +19,7 @@ Miembros Colaboradores:
   
 Contacto: @humbertowoody            <- Twitter
           humbertowoody.tumblr.com  <- Tumblr
+
+NOTA IMPORTANTE: El proyecto depende en plenitud de la Base de Datos por lo que,
+				 sin ésta, nada del código Funcionará. Si desea una copia de la 
+				 Base de Datos, contacte conmigo :)
